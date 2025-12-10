@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "RestrictPassRoleToAdminAndBreakGlass",
+      "Effect": "Deny",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::<ACCOUNT_ID>:role/*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:PrincipalArn": [
+            "arn:aws:iam::<ACCOUNT_ID>:role/Admin-Role",
+            "arn:aws:iam::<ACCOUNT_ID>:role/BreakGlass-Role"
+          ]
+        }
+      }
+    }
+  ]
+}
