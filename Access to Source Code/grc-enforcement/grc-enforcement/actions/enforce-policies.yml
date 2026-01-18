@@ -15,5 +15,3 @@ jobs:
         with:
           repository: your-org/grc-enforcement
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Run policy sync
-        run: ./scripts/policy-sync.sh
