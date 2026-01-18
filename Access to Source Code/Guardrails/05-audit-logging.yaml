@@ -1,0 +1,11 @@
+audit_logging:
+  events:
+    - read_access
+    - write_access
+    - approvals
+    - denials
+    - token_issuance
+    - integrity_failures
+  retention_days: 400
+  tamper_proof: true
+  export_target: audit-evidence/access2sourcecode/
