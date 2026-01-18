@@ -1,0 +1,5 @@
+commit_integrity:
+  signed_commits_required: true
+  allowed_signers: ["corporate-hsm", "sigstore"]
+  forbid_rebase_on_protected: true
+  forbid_force_push: true
