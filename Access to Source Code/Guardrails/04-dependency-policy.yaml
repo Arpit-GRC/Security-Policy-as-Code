@@ -1,0 +1,8 @@
+dependency_policy:
+  allowed_sources:
+    - internal_registry
+  checksum_verification: true
+  prohibited_sources:
+    - public_registry_without_provenance
+  publish_rights:
+    - release_engineer
