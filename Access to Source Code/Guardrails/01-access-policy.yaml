@@ -1,0 +1,16 @@
+control_id: ISO27002-8.4
+name: Access to Source Code
+default_action: deny
+read_access:
+  allowed_subjects: enterprise_users
+  conditions:
+    mfa: required
+    device_posture: compliant
+    network: any
+write_access:
+  allowed_roles:
+    - code_owner
+    - release_engineer
+  just_in_time: true
+  max_session_hours: 8
+
