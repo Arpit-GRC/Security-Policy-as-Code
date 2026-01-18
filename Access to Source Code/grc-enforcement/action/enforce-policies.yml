@@ -1,0 +1,17 @@
+name: Enforce Guardrails
+on:
+  push:
+    paths:
+      - 'guardrails/**'
+
+jobs:
+  plan-and-apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: your-org/grc-enforcement
+          token: ${{ secrets.GITHUB_TOKEN }}
