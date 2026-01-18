@@ -2,7 +2,7 @@ name: Enforce Guardrails
 on:
   push:
     paths:
-      - 'access-to-source-code/**'
+      - 'guardrails/**'
 
 jobs:
   plan-and-apply:
