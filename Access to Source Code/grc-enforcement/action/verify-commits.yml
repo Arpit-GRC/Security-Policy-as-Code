@@ -1,0 +1,25 @@
+
+name: Verify PR Signatures & Gate
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get commits
+        run: |
+          commits=$(git rev-list --no-merges origin/${{ github.base_ref }}..HEAD)
+          echo "$commits" > /tmp/commits.txt
+      - name: Check commit signatures
+        run: |
+          # verify each commit is signed by allowed keys (cosign/gpg)
+          # Example: use git verify-commit or cosign verify-blob depending on signature method
+          # Exit non-zero if unsigned or untrusted signer
+          ./scripts/check-commit-signatures.sh /tmp/commits.txt
+      - name: Ensure minimum approvals
+        run: |
+          # Use GitHub API to count approvals; fail if <2
+          ./scripts/check-approvals.sh
