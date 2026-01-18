@@ -1,4 +1,3 @@
-control_id: ISO27002-8.4
 name: Access to Source Code
 default_action: deny
 read_access:
