@@ -1,4 +1,3 @@
-
 name: Verify PR Signatures & Gate
 on:
   pull_request:
