@@ -5,7 +5,7 @@ read_access:
   conditions:
     mfa: required
     device_posture: compliant
-    network: any
+    network: internal
 write_access:
   allowed_roles:
     - code_owner
