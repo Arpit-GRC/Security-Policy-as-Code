@@ -16,6 +16,6 @@ resource "github_branch_protection" "main" {
     require_code_owner_reviews      = true
   }
 
-  enforce_admins = false
+  enforce_admins = true
   allow_force_push = false
 }
